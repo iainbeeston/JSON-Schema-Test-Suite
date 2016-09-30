@@ -50,6 +50,26 @@
         ]
     },
     {
+        "description": "ref with other properties",
+        "schema": {
+            "type": "number",
+            "maximum": 5,
+            "$ref": "http://localhost:1234/integer.json"
+        },
+        "tests": [
+            {
+                "description": "ignores other properties",
+                "data": 10,
+                "valid": true
+            },
+            {
+                "description": "data matches ref",
+                "data": "a",
+                "valid": false
+            }
+        ]
+    },
+    {
         "description": "change resolution scope",
         "schema": {
             "id": "http://localhost:1234/",
